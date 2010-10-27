@@ -1,6 +1,10 @@
 /**
  * jQuery.fn.ajaxLeftovers
- * Author : Alexandre Paquette (alexandre.paquette@nadrox.com)
+ * 
+ * Authors :
+ *      Alexandre Paquette (alexandre.paquette@nadrox.com)
+ *      Mathieu Sylvain (mathieu.sylvain@nurun.com)
+ * 
  * Project sponsored by : Nurun Inc.
  *
  * Descriptions : Create ajax requests allowing the server to
@@ -32,7 +36,6 @@
 /*global jQuery, window, document */
 /*jslint white: true, onevar: true, undef: true, nomen: true, eqeqeq: true, plusplus: true, bitwise: true, regexp: true, newcap: true, immed: true */
 (function ($) {
-
     jQuery.fn.ajaxLeftovers = function (userSettings) {
         var settings = {event: 'click'},
                 serverUrl,
