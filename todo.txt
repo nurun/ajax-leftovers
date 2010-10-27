@@ -1,15 +1,15 @@
-- Calling the ajaxLeftovers plugin should trigger the request, and not bind it. Thus leaving the dev to choose the binding method.
-- When calling the ajaxLeftovers plugin you should be able to set the values that can be provided by the metas
-- Default binding should be on window.load
-- In addition to event triggered on click, provide examples with event binded to window.load 
-- Sample connector.json should be expanded, human readable
-- Add support for JSONP through the plugin options
-- Run through JSLINT Strict
-- Iterate through "data" with .each instead of "for (var i in data)"... otherwise, text item membership to its parent (see jslint error)
-- Support multiple "leftovers-connector" instructions
-- Support automatic binding for "leftovers-connector" instructions (removes the need to trigger the plugin)
-- Support for the "prepend" method
-- Options for a "fade-in" for new content
-- Instead of using eval, create a "script" tag and append it. This will queue the execution outside of the plugin's scope and prevent any exception to interupt its task.
-- Refactor: $(data[i].selector) and data[i] is called too often, cache the value
-- Provide a way for the server to ask the script to "repeat this request in XX seconds"
+todo: Calling the ajaxLeftovers plugin should trigger the request, and not bind it. Thus leaving the dev to choose the binding method.
+todo: When calling the ajaxLeftovers plugin you should be able to set the values that can be provided by the metas
+todo: Default binding should be on window.load
+todo: In addition to event triggered on click, provide examples with event binded to window.load
+todo: Sample connector.json should be expanded, human readable
+todo: Add support for JSONP through the plugin options
+todo: Run through JSLINT Strict
+todo: Iterate through "data" with .each instead of "for (var i in data)"... otherwise, text item membership to its parent (see jslint error)
+todo: Support multiple "leftovers-connector" instructions
+todo: Support automatic binding for "leftovers-connector" instructions (removes the need to trigger the plugin)
+todo: Support for the "prepend" method
+todo: Options for a "fade-in" for new content
+todo: Instead of using eval, create a "script" tag and append it. This will queue the execution outside of the plugin's scope and prevent any exception to interupt its task.
+todo: Refactor: $(data[i].selector) and data[i] is called too often, cache the value
+todo: Provide a way for the server to ask the script to "repeat this request in XX seconds"
