@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="leftovers-connector" content="server-listeners/php/connector.php" />
+		<script type="text/javascript" src="dependencies/jquery-1.4.3.min.js"></script>
+		<script type="text/javascript" src="jquery.plugin.ajax-leftovers.js"></script>
+		<title>Ajax Leftovers example</title>
+	</head>
+	<body>
+		<h1>Ajax Leftovers plugin example</h1>
+		
+		<h2>Content #1: default behavior using a minimal response</h2>
+		<p> 
+			Content is replaced by the content provided by the server 
+		</p>
+		<div id="defaultBehaviorEx" class="example-container">
+			Some content on initialisation.
+		</div>
+		
+		<h2>Content #2: default behavior using full response</h2>
+		<div id="userContent" class="example-container">
+			Some content on initialisation.
+		</div>
+		
+		<h2>Content #3: using "append" update method</h2>
+		<p> 
+			Content is appended by the content provided by the server 
+		</p>
+		<p id="dynamicParagraph" class="example-container">
+			This is the first sentence of the paragraph.
+		</p>
+		
+		<h2>Calling a javascript method</h2>
+		<p> 
+			Server sends a javascript expression to the client. The expressions is parsed using eval(). 
+			This way, the javascript may be either call to an existing function or simple javascript expressions.   
+		</p>
+		
+		<button class="contentUpdater">Run examples!</button>
+		
+		<script type="text/javascript">
+			$(".contentUpdater").ajaxLeftovers({event:'click'});
+		</script>
+	</body>
+	
+</html>

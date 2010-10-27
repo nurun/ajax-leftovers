@@ -1,0 +1,19 @@
+[
+	{
+		"selector":"#userContent",
+		"content":"This content is returned via ajax",
+		"updateMethod":"replace"
+	},
+	{
+		"selector":"#dynamicParagraph",
+		"content":"This content is returned via ajax",
+		"updateMethod":"append"
+	},
+	{
+		"selector":"#defaultBehaviorEx",
+		"content":"This content is returned via ajax"
+	},
+	{
+		"script":"alert('hello world !')"
+	}
+]
