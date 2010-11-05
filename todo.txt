@@ -4,7 +4,6 @@ todo: Default binding should be on window.load
 todo: In addition to event triggered on click, provide examples with event binded to window.load
 todo: Sample connector.json should be expanded, human readable
 todo: Add support for JSONP through the plugin options
-todo: Run through JSLINT Strict
 todo: Iterate through "data" with .each instead of "for (var i in data)"... otherwise, text item membership to its parent (see jslint error)
 todo: Support multiple "leftovers-connector" instructions
 todo: Support automatic binding for "leftovers-connector" instructions (removes the need to trigger the plugin)

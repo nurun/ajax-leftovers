@@ -1,0 +1,19 @@
+[
+	{
+		"selector":"#userContent",
+        "content":"This content is returned when you click!",
+		"updateMethod":"replace"
+	},
+	{
+		"selector":"#dynamicParagraph",
+        "content":"This content is returned when you click!",
+		"updateMethod":"append"
+	},
+	{
+		"selector":"#defaultBehaviorEx",
+        "content":"This content is returned when you click!"
+	},
+	{
+		"script":"alert('You clicked!')"
+	}
+]

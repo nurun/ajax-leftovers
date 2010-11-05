@@ -12,8 +12,5 @@
 	{
 		"selector":"#defaultBehaviorEx",
 		"content":"This content is returned via ajax"
-	},
-	{
-		"script":"alert('hello world !')"
 	}
 ]

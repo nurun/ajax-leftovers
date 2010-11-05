@@ -36,45 +36,56 @@
 /*global jQuery, window, document */
 /*jslint white: true, onevar: true, undef: true, nomen: true, eqeqeq: true, plusplus: true, bitwise: true, regexp: true, newcap: true, immed: true */
 (function ($) {
-    jQuery.fn.ajaxLeftovers = function (userSettings) {
-        var settings = {event: 'click'},
-                serverUrl,
+    jQuery.fn.ajaxLeftovers = function (options) {
+        var settings = {},
                 pageUrl;
-        $.extend(settings, userSettings);
+        $.extend(settings, options);
         // retrieve the meta value "leftovers-connector" to create the ajax request
-        serverUrl = $("head meta[name=leftovers-connector]")[0].getAttribute('content');
         pageUrl = document.location.href;
-        function handleServerResponse(data) {
-            var i,
-                target,
-                item,
-                selector;
-            for (i in data) {
-                if (data.hasOwnProperty(i)) {
-                    item = data[i];
-                    selector = item.selector;
-                    target = $(selector);
-                    if (typeof selector !== "undefined") {
-                        if (typeof item.updateMethod === "undefined" ||
-                                item.updateMethod === "replace") {
-                            target.html(item.content);
-                        } else if (item.updateMethod === "append") {
-                            target.append(item.content);
-                        }
-                    }
-                    if (typeof item.script !== "undefined") {
-                        eval('(' + item.script + ')');
-                    }
-                }
-            }
-        }
-
+        //
         this.each(function () {
-            $(this).bind(settings.event, null, function () {
-                $.getJSON(serverUrl, {from: pageUrl}, handleServerResponse);
-            });
+            var serverUrl = this.href;
+            $.getJSON(serverUrl, {from: pageUrl}, handleServerResponse);
         });
 
     };
+
+    /*
+    * utility method to handle the response payload
+    */
+    function handleServerResponse(data) {
+        var i,
+            target,
+            item,
+            selector;
+        for (i in data) {
+            if (data.hasOwnProperty(i)) {
+                item = data[i];
+                selector = item.selector;
+                target = $(selector);
+                if (typeof selector !== "undefined") {
+                    if (typeof item.updateMethod === "undefined" ||
+                            item.updateMethod === "replace") {
+                        target.html(item.content);
+                    } else if (item.updateMethod === "append") {
+                        target.append(item.content);
+                    }
+                }
+                if (typeof item.script !== "undefined") {
+                    eval('(' + item.script + ')');
+                }
+            }
+        }
+    }
+
+    /*
+    Initialize the the events for automaticly bound connectors
+     */
+    $(window).load(function () {
+       $("link[rel='leftovers-connector'].auto").each(function (){
+           $(this).ajaxLeftovers();
+       });
+    });
+
 }(jQuery));
 
